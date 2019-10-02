@@ -30,6 +30,12 @@ PLUGIN_EXPORT void PLUGIN_CALL Unload(void** ppData)
 AMX_NATIVE_INFO arrPluginNatives[] = {
 	{ "vector_new", CVectorNatives::CreateVector },
 	{ "vector_delete", CVectorNatives::DeleteVector },
+	{ "vector_size", CVectorNatives::GetSize },
+	{ "vector_max_size", CVectorNatives::GetMaxSize },
+	{ "vector_push_back_int", CVectorNatives::PushIntValue },
+	{ "vector_push_back_float", CVectorNatives::PushFloatValue },
+	{ "vector_push_back_array", CVectorNatives::PushArrayValue },
+	{ "vector_pop_back", CVectorNatives::PopValue },
 	{ 0, 0 }
 };
 

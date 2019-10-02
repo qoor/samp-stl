@@ -17,7 +17,7 @@ private:
 
 public:
 	CValue() : m_valueType(NONE), m_pValue(nullptr), m_valueSize(0) { }
-	CValue(eValueType valueType, cell* pValue, cell valueSize = 1);
+	CValue(eValueType valueType, cell value, cell valueSize = 1);
 	~CValue();
 
 	cell Get() const;

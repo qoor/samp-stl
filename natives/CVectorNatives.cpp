@@ -1,63 +1,57 @@
 #include "StdInc.h"
-#include "CVector.h"
 #include "CVectorNatives.h"
 
 CContainerManager<std::vector<CValue>> CVectorNatives::ms_vectorManager;
 
 cell AMX_NATIVE_CALL CVectorNatives::CreateVector(AMX* pAmx, cell* pParams)
 {
-	return m_vectorManager.;
+	return ms_vectorManager.CreateContainer(pAmx);
 }
 
 cell AMX_NATIVE_CALL CVectorNatives::DeleteVector(AMX* pAmx, cell* pParams)
 {
-	CVector* pList = GetVectorList(pAmx);
+	int id = static_cast<int>(pParams[1]);
 
-	if (pList != nullptr)
-	{
-		int id = static_cast<int>(pParams[1]);
-		std::vector<CValue>* pVector = GetVector(pAmx)
-
-		if (id < pList->m_vectors.size() && (*pList).m_vectors[id] != nullptr)
-		{
-			delete (*pList).m_vectors[id];
-			(*pList).m_vectors[id] = nullptr;
-			return 1;
-		}
-	}
-
-	return 0;
+	return static_cast<cell>(ms_vectorManager.DeleteContainer(pAmx, id));
 }
 
-bool CVectorNatives::AddVectorList(AMX* pAmx)
+cell AMX_NATIVE_CALL CVectorNatives::PushIntValue(AMX* pAmx, cell* pParams)
 {
-	if (GetVectorList(pAmx) == nullptr)
-	{
-		ms_vectors.insert(std::pair<AMX*, CVector>(pAmx, CVector()));
-		return true;
-	}
+	int id = static_cast<int>(pParams[1]);
+	std::vector<CValue>* pContainer = ms_vectorManager.GetContainer(pAmx, id);
 
-	return false;
+	if (pContainer)
+		pContainer->push_back(CValue(INTEGER, pParams[2]));
 }
 
-bool CVectorNatives::RemoveVectorList(AMX* pAmx)
+cell AMX_NATIVE_CALL CVectorNatives::PushFloatValue(AMX* pAmx, cell* pParams)
 {
-	CVector* pList = GetVectorList(pAmx);
-	std::vector<CValue>* pVector = nullptr;
+	int id = static_cast<int>(pParams[1]);
+	std::vector<CValue>* pContainer = ms_vectorManager.GetContainer(pAmx, id);
 
-	if (pList != nullptr)
+	if (pContainer)
+		pContainer->push_back(CValue(INTEGER, pParams[2]));
+}
+
+cell AMX_NATIVE_CALL CVectorNatives::PushArrayValue(AMX* pAmx, cell* pParams)
+{
+	int id = static_cast<int>(pParams[1]);
+	std::vector<CValue>* pContainer = ms_vectorManager.GetContainer(pAmx, id);
+
+	if (pContainer)
 	{
-		for (int i = 0; i < pList->m_vectors.size(); ++i)
-		{
-			pVector = (*pList).m_vectors[i];
-
-			if (pVector != nullptr)
-				delete pVector;
-		}
-
-		ms_vectors.erase(pAmx);
-		return true;
+		cell* pPointer;
+		
+		amx_GetAddr(pAmx, pParams[2], &pPointer);
+		pContainer->push_back(CValue(INTEGER, reinterpret_cast<cell>(pPointer), pParams[3]));
 	}
+}
 
-	return false;
+cell AMX_NATIVE_CALL CVectorNatives::PopValue(AMX* pAmx, cell* pParams)
+{
+	int id = static_cast<int>(pParams[1]);
+	std::vector<CValue>* pContainer = ms_vectorManager.GetContainer(pAmx, id);
+
+	if (pContainer)
+		pContainer->pop_back();
 }

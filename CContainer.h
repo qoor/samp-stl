@@ -16,15 +16,15 @@ public:
 template <typename T>
 class CContainerManager
 {
-	friend class CContainer<T>
-
 private:
 	std::unordered_map<AMX*, CContainer<T>> m_containerLists;
+
+	friend class CContainer<T>;
 
 public:
 	CContainer<T>* GetContainerList(AMX* pAmx);
 
 	cell CreateContainer(AMX* pAmx);
 	bool DeleteContainer(AMX* pAmx, cell id);
-	//T* GetContainer(AMX* pAmx, cell id) const;
+	T* GetContainer(AMX* pAmx, cell id) const;
 };

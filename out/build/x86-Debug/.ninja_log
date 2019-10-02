@@ -11,3 +11,14 @@
 10	775	591694755	CMakeFiles/samp-stl.dir/CValue.cpp.obj	66d247e0ccbd527e
 7	818	591694755	CMakeFiles/samp-stl.dir/CIdentifier.cpp.obj	9aed2cbd14d37a8a
 1	435	591694782	CMakeFiles/samp-stl.dir/plugin.cpp.obj	cb95364b26cb66a2
+4	436	591696933	CMakeFiles/samp-stl.dir/containers/CVector.cpp.obj	1ec77e4fb8c25ee
+0	593	591697076	CMakeFiles/samp-stl.dir/natives/CVectorNatives.cpp.obj	48ba112743cdad3f
+593	651	591697076	samp-stl.lib	b8b52ba5c2183856
+0	136	591697164	CMakeFiles/samp-stl.dir/SDK/amxplugin.cpp.obj	bd06a147defebca
+10	566	591697164	CMakeFiles/samp-stl.dir/CValue.cpp.obj	9f161acedb5ab1f0
+19	567	591697164	CMakeFiles/samp-stl.dir/natives/CVectorNatives.cpp.obj	bed2ffcbcf5ae62f
+7	643	591697164	CMakeFiles/samp-stl.dir/CIdentifier.cpp.obj	44f679a1dbe99f7
+0	499	591697199	CMakeFiles/samp-stl.dir/plugin.cpp.obj	454412b23c8fc4b7
+9	545	591697199	CMakeFiles/samp-stl.dir/natives/CVectorNatives.cpp.obj	bed2ffcbcf5ae62f
+0	545	591697217	CMakeFiles/samp-stl.dir/CContainer.cpp.obj	10416b0eb1361d77
+545	596	591697217	samp-stl.lib	fa8ad78703e1e38f

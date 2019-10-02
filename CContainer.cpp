@@ -1,5 +1,4 @@
 #include "StdInc.h"
-#include "CVector.h"
 
 template <typename T>
 T* CContainer<T>::GetContainer(cell id) const
@@ -63,8 +62,13 @@ bool CContainerManager<T>::DeleteContainer(AMX* pAmx, cell id)
 	return false;
 }
 
-/*template <typename T>
+template <typename T>
 T* CContainerManager<T>::GetContainer(AMX* pAmx, cell id) const
 {
+	CContainer<T>* pList = GetContainerList(pAmx);
 
-}*/
+	if (pList)
+		return pList->GetContainer(id);
+
+	return nullptr;
+}

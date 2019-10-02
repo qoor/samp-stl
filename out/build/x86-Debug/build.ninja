@@ -49,7 +49,7 @@ build cmake_object_order_depends_target_samp-stl: phony || CMakeFiles\samp-stl.d
 build CMakeFiles\samp-stl.dir\SDK\amxplugin.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\SDK\amxplugin.cpp || cmake_object_order_depends_target_samp-stl
   DEFINES = -DHAVE_STDINT_H
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC   -D
-  INCLUDES = -I..\..\..\ -I..\..\..\natives -I..\..\..\containers
+  INCLUDES = -I..\..\..\ -I..\..\..\natives
   OBJECT_DIR = CMakeFiles\samp-stl.dir
   OBJECT_FILE_DIR = CMakeFiles\samp-stl.dir\SDK
   TARGET_COMPILE_PDB = CMakeFiles\samp-stl.dir\samp-stl.pdb
@@ -57,7 +57,7 @@ build CMakeFiles\samp-stl.dir\SDK\amxplugin.cpp.obj: CXX_COMPILER__samp-stl ..\.
 build CMakeFiles\samp-stl.dir\plugin.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\plugin.cpp || cmake_object_order_depends_target_samp-stl
   DEFINES = -DHAVE_STDINT_H
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC   -D
-  INCLUDES = -I..\..\..\ -I..\..\..\natives -I..\..\..\containers
+  INCLUDES = -I..\..\..\ -I..\..\..\natives
   OBJECT_DIR = CMakeFiles\samp-stl.dir
   OBJECT_FILE_DIR = CMakeFiles\samp-stl.dir
   TARGET_COMPILE_PDB = CMakeFiles\samp-stl.dir\samp-stl.pdb
@@ -65,7 +65,7 @@ build CMakeFiles\samp-stl.dir\plugin.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\pl
 build CMakeFiles\samp-stl.dir\CIdentifier.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\CIdentifier.cpp || cmake_object_order_depends_target_samp-stl
   DEFINES = -DHAVE_STDINT_H
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC   -D
-  INCLUDES = -I..\..\..\ -I..\..\..\natives -I..\..\..\containers
+  INCLUDES = -I..\..\..\ -I..\..\..\natives
   OBJECT_DIR = CMakeFiles\samp-stl.dir
   OBJECT_FILE_DIR = CMakeFiles\samp-stl.dir
   TARGET_COMPILE_PDB = CMakeFiles\samp-stl.dir\samp-stl.pdb
@@ -73,7 +73,15 @@ build CMakeFiles\samp-stl.dir\CIdentifier.cpp.obj: CXX_COMPILER__samp-stl ..\..\
 build CMakeFiles\samp-stl.dir\CValue.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\CValue.cpp || cmake_object_order_depends_target_samp-stl
   DEFINES = -DHAVE_STDINT_H
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC   -D
-  INCLUDES = -I..\..\..\ -I..\..\..\natives -I..\..\..\containers
+  INCLUDES = -I..\..\..\ -I..\..\..\natives
+  OBJECT_DIR = CMakeFiles\samp-stl.dir
+  OBJECT_FILE_DIR = CMakeFiles\samp-stl.dir
+  TARGET_COMPILE_PDB = CMakeFiles\samp-stl.dir\samp-stl.pdb
+  TARGET_PDB = samp-stl.pdb
+build CMakeFiles\samp-stl.dir\CContainer.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\CContainer.cpp || cmake_object_order_depends_target_samp-stl
+  DEFINES = -DHAVE_STDINT_H
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC   -D
+  INCLUDES = -I..\..\..\ -I..\..\..\natives
   OBJECT_DIR = CMakeFiles\samp-stl.dir
   OBJECT_FILE_DIR = CMakeFiles\samp-stl.dir
   TARGET_COMPILE_PDB = CMakeFiles\samp-stl.dir\samp-stl.pdb
@@ -81,17 +89,9 @@ build CMakeFiles\samp-stl.dir\CValue.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\CV
 build CMakeFiles\samp-stl.dir\natives\CVectorNatives.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\natives\CVectorNatives.cpp || cmake_object_order_depends_target_samp-stl
   DEFINES = -DHAVE_STDINT_H
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC   -D
-  INCLUDES = -I..\..\..\ -I..\..\..\natives -I..\..\..\containers
+  INCLUDES = -I..\..\..\ -I..\..\..\natives
   OBJECT_DIR = CMakeFiles\samp-stl.dir
   OBJECT_FILE_DIR = CMakeFiles\samp-stl.dir\natives
-  TARGET_COMPILE_PDB = CMakeFiles\samp-stl.dir\samp-stl.pdb
-  TARGET_PDB = samp-stl.pdb
-build CMakeFiles\samp-stl.dir\containers\CVector.cpp.obj: CXX_COMPILER__samp-stl ..\..\..\containers\CVector.cpp || cmake_object_order_depends_target_samp-stl
-  DEFINES = -DHAVE_STDINT_H
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC   -D
-  INCLUDES = -I..\..\..\ -I..\..\..\natives -I..\..\..\containers
-  OBJECT_DIR = CMakeFiles\samp-stl.dir
-  OBJECT_FILE_DIR = CMakeFiles\samp-stl.dir\containers
   TARGET_COMPILE_PDB = CMakeFiles\samp-stl.dir\samp-stl.pdb
   TARGET_PDB = samp-stl.pdb
 
@@ -102,7 +102,7 @@ build CMakeFiles\samp-stl.dir\containers\CVector.cpp.obj: CXX_COMPILER__samp-stl
 #############################################
 # Link the static library samp-stl.lib
 
-build samp-stl.lib: CXX_STATIC_LIBRARY_LINKER__samp-stl CMakeFiles\samp-stl.dir\SDK\amxplugin.cpp.obj CMakeFiles\samp-stl.dir\plugin.cpp.obj CMakeFiles\samp-stl.dir\CIdentifier.cpp.obj CMakeFiles\samp-stl.dir\CValue.cpp.obj CMakeFiles\samp-stl.dir\natives\CVectorNatives.cpp.obj CMakeFiles\samp-stl.dir\containers\CVector.cpp.obj
+build samp-stl.lib: CXX_STATIC_LIBRARY_LINKER__samp-stl CMakeFiles\samp-stl.dir\SDK\amxplugin.cpp.obj CMakeFiles\samp-stl.dir\plugin.cpp.obj CMakeFiles\samp-stl.dir\CIdentifier.cpp.obj CMakeFiles\samp-stl.dir\CValue.cpp.obj CMakeFiles\samp-stl.dir\CContainer.cpp.obj CMakeFiles\samp-stl.dir\natives\CVectorNatives.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /ZI /Ob0 /Od /RTC1 /JMC
   LINK_FLAGS = /machine:X86
   OBJECT_DIR = CMakeFiles\samp-stl.dir
