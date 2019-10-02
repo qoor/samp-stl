@@ -1,0 +1,13 @@
+# ninja log v5
+0	523	591683946	CMakeFiles/samp-stl.dir/plugin.cpp.obj	ea9d13f305e1ce1f
+523	573	591683946	samp-stl.lib	652e53591499462a
+1	331	591685684	CMakeFiles/samp-stl.dir/SDK/amxplugin.cpp.obj	2ac97f2ce631bcd1
+1	238	591685758	CMakeFiles/samp-stl.dir/SDK/amxplugin.cpp.obj	bd06a147defebca
+10	467	591685758	CMakeFiles/samp-stl.dir/natives/CVectorNatives.cpp.obj	bed2ffcbcf5ae62f
+7	474	591685758	CMakeFiles/samp-stl.dir/CIdentifier.cpp.obj	44f679a1dbe99f7
+0	416	591685784	CMakeFiles/samp-stl.dir/plugin.cpp.obj	454412b23c8fc4b7
+416	463	591685784	samp-stl.lib	356f0b8946abf1bf
+0	360	591694755	CMakeFiles/samp-stl.dir/SDK/amxplugin.cpp.obj	b3139c9bc3fd29b0
+10	775	591694755	CMakeFiles/samp-stl.dir/CValue.cpp.obj	66d247e0ccbd527e
+7	818	591694755	CMakeFiles/samp-stl.dir/CIdentifier.cpp.obj	9aed2cbd14d37a8a
+1	435	591694782	CMakeFiles/samp-stl.dir/plugin.cpp.obj	cb95364b26cb66a2
