@@ -20,6 +20,7 @@ set (PROJECT_SOURCES
 	"CValue.h"
 	"CContainer.cpp"
 	"CContainer.h"
+	"CSingleton.h"
 
 	"natives/CVectorNatives.cpp"
 	"natives/CVectorNatives.h"

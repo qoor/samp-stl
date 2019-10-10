@@ -4,27 +4,23 @@ template <typename T>
 class CContainer
 {
 private:
-	std::vector<T*> m_containers;
+	std::unordered_map<cell, T> m_containers;
 	CIdentifier m_identifier;
 
 public:
-	T* GetContainer(cell id) const;
-
-	size_t size() const { return m_containers.size(); }
+	cell AddContainer(size_t size);
+	bool RemoveContainer(cell id);
+	bool GetContainer(T** destination, cell Id);
 };
 
 template <typename T>
 class CContainerManager
 {
 private:
-	std::unordered_map<AMX*, CContainer<T>> m_containerLists;
-
-	friend class CContainer<T>;
+	std::unordered_map<AMX*, CContainer<T>> m_amxContainer;
 
 public:
-	CContainer<T>* GetContainerList(AMX* pAmx);
-
-	cell CreateContainer(AMX* pAmx);
-	bool DeleteContainer(AMX* pAmx, cell id);
-	T* GetContainer(AMX* pAmx, cell id) const;
+	void CreateAmxContainer(AMX* pAmx);
+	void DeleteAmxContainer(AMX* pAmx);
+	bool GetAmxContainer(CContainer<T>** destination, AMX* pAmx);
 };

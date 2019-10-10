@@ -1,74 +1,67 @@
 #include "StdInc.h"
 
 template <typename T>
-T* CContainer<T>::GetContainer(cell id) const
+cell CContainer<T>::AddContainer(size_t size)
 {
-	if (id < m_containers.size())
-		return m_containers[id];
+	cell id = m_identifier.Get();
 
-	return nullptr;
-}
-
-template <typename T>
-CContainer<T>* CContainerManager<T>::GetContainerList(AMX* pAmx)
-{
-	std::unordered_map<AMX*, CVector>::iterator it =
-		ms_vectors.find(pAmx);
-
-	if (it != ms_vectors.end())
-		return &(it->second);
-
-	return nullptr;
-}
-
-template <typename T>
-cell CContainerManager<T>::CreateContainer(AMX* pAmx)
-{
-	CContainer<T>* pContainerList = GetContainerList(pAmx);
-
-	if (pContainerList)
+	if (size == -1)
 	{
-		cell id = pContainerList->m_identifier.Get();
-
-		if (id < pContainerList->size())
-			pContainerList->m_containers[id] = new T();
-		else
-			pContainerList->m_containers.push_back(new T());
-
-		return id;
+		m_containers.insert(std::pair<cell, T>(id, T()));
+	}
+	else
+	{
+		m_containers.insert(std::pair<cell, T>(id, T(size)));
 	}
 
-	return 0;
+	return id;
 }
 
 template <typename T>
-bool CContainerManager<T>::DeleteContainer(AMX* pAmx, cell id)
+bool CContainer<T>::RemoveContainer(cell id)
 {
-	CContainer<T>* pContainerList = GetContainerList(pAmx);
+	return m_containers.erase(id);
+}
 
-	if (!pContainerList)
-		return false;
+template <typename T>
+bool CContainer<T>::GetContainer(T** destination, cell id)
+{
+	assert(destination != nullptr);
+	std::unordered_map<cell, T>::iterator it = m_containers.find(id);
 
-	T* pContainer = pContainerList->GetContainer(id);
-
-	if (pContainer)
+	if (it != m_containers.end())
 	{
-		delete pContainerList->m_containers[id];
-		pContainerList->m_containers[id] = nullptr;
-		pContainerList->m_identifier.Remove(id);
+		*destination = &(it->second);
 		return true;
 	}
-
+	
 	return false;
 }
 
 template <typename T>
-T* CContainerManager<T>::GetContainer(AMX* pAmx, cell id) const
+void CContainerManager<T>::CreateAmxContainer(AMX* pAmx)
 {
-	CContainer<T>* pList = GetContainerList(pAmx);
+	assert(m_amxContainer.find(pAmx) == m_amxContainer.end());
+	m_amxContainer.insert(pAmx, CContainer<T>());
+}
 
-	if (pList)
-		return pList->GetContainer(id);
+template <typename T>
+void CContainerManager<T>::DeleteAmxContainer(AMX* pAmx)
+{
+	assert(m_amxContainer.erase(pAmx));
+}
 
-	return nullptr;
+template <typename T>
+bool CContainerManager<T>::GetAmxContainer(CContainer<T>** destination, AMX* pAmx)
+{
+	assert(destination != nullptr);
+	std::unordered_map<cell, CContainer<T>>::iterator it = m_amxContainer.find(id);
+
+	if (it != m_amxContainer.end())
+	{
+		*destination = &(it->second);
+		return true;
+	}
+
+	return false;
 }

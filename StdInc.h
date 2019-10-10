@@ -11,6 +11,7 @@
 #include "SDK/plugin.h"
 #include "SDK/plugincommon.h"
 
+#include "CSingleton.h"
 #include "CIdentifier.h"
 #include "CValue.h"
 #include "CContainer.h"

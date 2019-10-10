@@ -20,6 +20,7 @@ public:
 	CValue(eValueType valueType, cell value, cell valueSize = 1);
 	~CValue();
 
+	eValueType GetType() const;
 	cell Get() const;
-	cell* GetArray() const;
+	bool GetArray(cell** pOutArrayPointer, cell* pOutSize) const;
 };

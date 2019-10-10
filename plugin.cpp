@@ -28,14 +28,22 @@ PLUGIN_EXPORT void PLUGIN_CALL Unload(void** ppData)
 }
 
 AMX_NATIVE_INFO arrPluginNatives[] = {
-	{ "vector_new", CVectorNatives::CreateVector },
-	{ "vector_delete", CVectorNatives::DeleteVector },
-	{ "vector_size", CVectorNatives::GetSize },
-	{ "vector_max_size", CVectorNatives::GetMaxSize },
-	{ "vector_push_back_int", CVectorNatives::PushIntValue },
-	{ "vector_push_back_float", CVectorNatives::PushFloatValue },
-	{ "vector_push_back_array", CVectorNatives::PushArrayValue },
-	{ "vector_pop_back", CVectorNatives::PopValue },
+	{ "vec_new", CVectorNatives::CreateVector },
+	{ "vec_delete", CVectorNatives::DeleteVector },
+	{ "vec_size", CVectorNatives::GetSize },
+	{ "vec_max_size", CVectorNatives::GetMaxSize },
+	{ "vec_resize", CVectorNatives::SetResize },
+	{ "vec_capacity", CVectorNatives::GetCapacity },
+	{ "vec_empty", CVectorNatives::IsEmpty },
+	{ "vec_reserve", CVectorNatives::SetReserve },
+	{ "vec_shrink_to_fit", CVectorNatives::ShrinkToFit },
+	{ "vec_push_back_int", CVectorNatives::PushIntValue },
+	{ "vec_push_back_float", CVectorNatives::PushFloatValue },
+	{ "vec_push_back_array", CVectorNatives::PushArrayValue },
+	{ "vec_pop_back", CVectorNatives::PopValue },
+	{ "vec_at_int", CVectorNatives::GetValueByInt },
+	{ "vec_at_float", CVectorNatives::GetValueByFloat },
+	{ "vec_at_array", CVectorNatives::GetValueByArray },
 	{ 0, 0 }
 };
 

@@ -27,26 +27,28 @@ CValue::~CValue()
 	}
 }
 
-cell CValue::Get() const
+eValueType CValue::GetType() const
 {
-	switch (m_valueType)
-	{
-		case INTEGER:
-			return reinterpret_cast<cell>(m_pValue);
-		case FLOAT:
-		{
-			cell value = reinterpret_cast<cell>(m_pValue);
-			return amx_ctof(value);
-		}
-	}
-
-	return 0;
+	return m_valueType;
 }
 
-cell* CValue::GetArray() const
+cell CValue::Get() const
 {
-	if (m_valueType != ARRAY)
-		return nullptr;
+	assert(m_valueType != ARRAY);
+	return reinterpret_cast<cell>(m_pValue);
+}
 
-	return m_pValue;
+bool CValue::GetArray(cell** pOutArrayPointer, cell* pOutSize) const
+{
+	assert(pOutArrayPointer != nullptr);
+	assert(pOutSize != nullptr);
+
+	if (m_valueType != ARRAY)
+	{
+		return false;
+	}
+
+	*pOutArrayPointer = m_pValue;
+	*pOutSize = m_valueSize;
+	return true;
 }
